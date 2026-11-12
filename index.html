@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Fresh energy quotes | Better Connected</title>
+<meta name="description" content="Upload your latest electricity bill, sign one letter of authority and let Better Connected do the rest.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#f4f3ee;--surface:#ffffff;--surface2:#eceae3;
+  --lime:#6b8c00;--lime-bright:#c8f542;--lime-dim:rgba(107,140,0,0.10);--lime-border:rgba(107,140,0,0.32);
+  --text:#0a0a0a;--text-mid:rgba(10,10,10,0.70);--text-low:rgba(10,10,10,0.48);
+  --border:rgba(10,10,10,0.10);--border-mid:rgba(10,10,10,0.20);
+  --error:#b3261e;
+  --font-display:'Fraunces',Georgia,'Times New Roman',serif;
+  --font-body:'Inter',-apple-system,system-ui,sans-serif;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--lime);text-underline-offset:3px}
+.draft{background:#0a0a0a;color:var(--lime-bright);text-align:center;font-size:0.82rem;padding:0.45rem 1rem;letter-spacing:0.01em}
+header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:1px solid var(--border);background:rgba(244,243,238,0.96)}
+.logo{font-size:1rem;font-weight:700;letter-spacing:-0.02em;color:var(--text);text-decoration:none}
+.logo span{color:var(--lime)}
+.help{font-size:0.88rem;color:var(--text-mid)}
+.help a{color:var(--text);font-weight:600;text-decoration:none}
+main{flex:1;width:100%;max-width:620px;margin:0 auto;padding:1.5rem 1.25rem 3rem}
+.progress{margin:0.5rem 0 1.5rem}
+.progress-meta{display:flex;justify-content:space-between;font-size:0.82rem;color:var(--text-mid);margin-bottom:0.45rem}
+.bar{height:6px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--lime);border-radius:99px;transition:width 0.45s cubic-bezier(0.22,1,0.36,1)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem 1.4rem;box-shadow:0 1px 2px rgba(10,10,10,0.04)}
+h1{font-family:var(--font-display);font-weight:560;font-size:clamp(1.8rem,6vw,2.4rem);line-height:1.1;letter-spacing:-0.02em;margin-bottom:0.75rem}
+h2{font-family:var(--font-display);font-weight:560;font-size:1.5rem;line-height:1.2;letter-spacing:-0.01em;margin-bottom:0.4rem}
+.lead{color:var(--text-mid);margin-bottom:1.25rem}
+.ticks{list-style:none;margin:1rem 0 1.25rem}
+.ticks li{position:relative;padding-left:1.8rem;margin:0.55rem 0}
+.ticks li::before{content:"";position:absolute;left:0;top:0.32rem;width:1.05rem;height:1.05rem;border-radius:50%;background:var(--lime-dim);border:1px solid var(--lime-border)}
+.ticks li::after{content:"";position:absolute;left:0.36rem;top:0.52rem;width:0.3rem;height:0.55rem;border:solid var(--lime);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.note{background:var(--lime-dim);border:1px solid var(--lime-border);border-radius:10px;padding:0.8rem 0.95rem;font-size:0.92rem;margin:1rem 0}
+.field{margin:1rem 0}
+label{display:block;font-weight:600;font-size:0.95rem;margin-bottom:0.35rem}
+.hint{display:block;font-weight:400;color:var(--text-mid);font-size:0.85rem;margin-top:0.1rem}
+input[type=text],input[type=email],input[type=tel],select{width:100%;font:inherit;padding:0.8rem 0.9rem;border:1px solid var(--border-mid);border-radius:10px;background:#fff;color:var(--text)}
+input:focus,select:focus{outline:none;border-color:var(--lime);box-shadow:0 0 0 3px var(--lime-dim)}
+.invalid input,.invalid select,.invalid .drop{border-color:var(--error)}
+.err{display:none;color:var(--error);font-size:0.85rem;margin-top:0.3rem}
+.invalid .err{display:block}
+.drop{display:block;border:2px dashed var(--border-mid);border-radius:12px;padding:1.6rem 1rem;text-align:center;cursor:pointer;background:var(--bg);transition:border-color 0.2s,background 0.2s}
+.drop:hover,.drop.over{border-color:var(--lime);background:var(--lime-dim)}
+.drop strong{display:block;font-size:1rem}
+.drop span{font-size:0.85rem;color:var(--text-mid)}
+.drop input{display:none}
+.file-ok{display:none;margin-top:0.6rem;font-size:0.9rem;color:var(--lime);font-weight:600}
+.check{display:flex;gap:0.7rem;align-items:flex-start;margin:0.9rem 0;font-size:0.95rem;font-weight:500}
+.check input{width:1.2rem;height:1.2rem;margin-top:0.2rem;accent-color:var(--lime);flex:none}
+.actions{display:flex;flex-direction:column;gap:0.7rem;margin-top:1.5rem}
+.btn{font:inherit;font-weight:600;font-size:1rem;border:none;border-radius:99px;padding:0.95rem 1.4rem;cursor:pointer;text-align:center;text-decoration:none}
+.btn-primary{background:var(--lime);color:#f4f3ee}
+.btn-primary:hover{background:#5a7600}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border-mid)}
+.btn-link{background:none;border:none;color:var(--text-mid);font:inherit;font-size:0.92rem;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0.3rem}
+.back{background:none;border:none;font:inherit;font-size:0.9rem;color:var(--text-mid);cursor:pointer;margin-bottom:0.8rem;padding:0}
+.back::before{content:"\2190  "}
+.perm{border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;margin:0.9rem 0;font-size:0.92rem;background:var(--bg)}
+.perm h3{font-size:0.95rem;margin-bottom:0.4rem}
+.perm ul{padding-left:1.1rem}
+.perm li{margin:0.25rem 0}
+.summary{width:100%;border-collapse:collapse;margin:0.8rem 0;font-size:0.95rem}
+.summary td{padding:0.55rem 0;border-bottom:1px solid var(--border);vertical-align:top}
+.summary td:first-child{color:var(--text-mid);width:40%}
+.timeline{list-style:none;margin:1.2rem 0;counter-reset:t}
+.timeline li{counter-increment:t;position:relative;padding:0 0 1rem 2.6rem}
+.timeline li::before{content:counter(t);position:absolute;left:0;top:0;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--lime);color:#f4f3ee;font-weight:700;font-size:0.9rem;display:flex;align-items:center;justify-content:center}
+.timeline strong{display:block}
+.step{display:none}
+.step.active{display:block;animation:in 0.4s cubic-bezier(0.22,1,0.36,1)}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.trust{display:flex;flex-wrap:wrap;gap:0.4rem 1.2rem;justify-content:center;margin-top:1.4rem;font-size:0.8rem;color:var(--text-low)}
+footer{border-top:1px solid var(--border);padding:1.2rem;text-align:center;font-size:0.8rem;color:var(--text-low)}
+footer a{color:var(--text-mid)}
+@media(min-width:560px){.actions{flex-direction:row-reverse;justify-content:space-between;align-items:center}.card{padding:2rem 2rem}}
+</style>
+</head>
+<body>
+<div class="draft" id="draftBanner">Draft preview for review. Nothing you enter here is sent or stored.</div>
+<header>
+  <a class="logo" href="https://betterconnected.biz" title="Visit betterconnected.biz">Better<span>Connected</span></a>
+  <div class="help">Questions? <a href="tel:08452177525">0845 217 7525</a></div>
+</header>
+
+<main>
+  <div class="progress" id="progress" hidden>
+    <div class="progress-meta"><span id="stepLabel">Step 1 of 5</span><span id="stepName">Your bill</span></div>
+    <div class="bar"><i id="barFill"></i></div>
+  </div>
+
+  <form id="flow" novalidate>
+
+    <!-- 0. Welcome -->
+    <section class="step active" data-step="0">
+      <div class="card">
+        <h1>Fresh energy prices, without the sales call.</h1>
+        <p class="lead">Five minutes, your latest electricity bill, and one signature. We do the rest and report back by email.</p>
+        <ul class="ticks">
+          <li>Upload your latest bill. We read the details for you.</li>
+          <li>Sign one letter of authority so we can check your supply.</li>
+          <li>Your named account manager emails you what we find within a week.</li>
+        </ul>
+        <div class="note">Nothing changes on your account. We only look, compare and report. You decide what happens next.</div>
+        <div class="actions">
+          <button type="button" class="btn btn-primary" data-next>Start, I have my bill</button>
+          <button type="button" class="btn-link" data-goto="remind">No bill to hand? Remind me later</button>
+        </div>
+      </div>
+      <div class="trust"><span>16 years trading</span><span>Registered with the Energy Ombudsman</span><span>Listed with Cornwall Insight</span></div>
+    </section>
+
+    <!-- 1. Bill -->
+    <section class="step" data-step="1" data-name="Your bill">
+      <button type="button" class="back" data-back>Back</button>
+      <div class="card">
+        <h2>Upload your latest electricity bill</h2>
+        <p class="lead">A PDF or a clear photo is fine. We use it to find your meter number, supplier and usage, so you do not have to type them.</p>
+        <div class="field" data-req="bill">
+          <label class="drop" id="drop">
+            <strong>Choose a file or drop it here</strong>
+            <span>PDF, JPG or PNG, up to 10MB</span>
+            <input type="file" id="bill" name="bill" accept=".pdf,.jpg,.jpeg,.png">
+          </label>
+          <div class="file-ok" id="fileOk"></div>
+          <div class="err">Please add your latest bill to continue.</div>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn btn-primary" data-next>Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Business -->
+    <section class="step" data-step="2" data-name="Your business">
+      <button type="button" class="back" data-back>Back</button>
+      <div class="card">
+        <h2>Your business</h2>
+        <p class="lead">Just two things. We check the rest with Companies House.</p>
+        <div class="field" data-req="company">
+          <label for="company">Registered company name</label>
+          <input type="text" id="company" name="company" autocomplete="organization">
+          <div class="err">Please enter your company name.</div>
+        </div>
+        <div class="field" data-req="postcode">
+          <label for="postcode">Business postcode</label>
+          <input type="text" id="postcode" name="postcode" autocomplete="postal-code">
+          <div class="err">Please enter a postcode.</div>
+        </div>
+        <div class="field">
+          <label for="companyNo">Company number <span class="hint">Optional. Helps us match you first time.</span></label>
+          <input type="text" id="companyNo" name="companyNo">
+        </div>
+        <div class="actions">
+          <button type="button" class="btn btn-primary" data-next>Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. You -->
+    <section class="step" data-step="3" data-name="About you">
+      <button type="button" class="back" data-back>Back</button>
+      <div class="card">
+        <h2>About you</h2>
+        <p class="lead">The letter of authority will be sent to this email for you to sign.</p>
+        <div class="field" data-req="name">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" autocomplete="name">
+          <div class="err">Please enter your name.</div>
+        </div>
+        <div class="field" data-req="role">
+          <label for="role">Your role</label>
+          <select id="role" name="role">
+            <option value="">Select one</option>
+            <option>Director or owner</option>
+            <option>Finance director or manager</option>
+            <option>Office or facilities manager</option>
+            <option>Other authorised person</option>
+          </select>
+          <div class="err">Please choose your role.</div>
+        </div>
+        <div class="field" data-req="email">
+          <label for="email">Work email</label>
+          <input type="email" id="email" name="email" autocomplete="email">
+          <div class="err">Please enter a valid email address.</div>
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span class="hint">Optional. We will only call if you ask us to.</span></label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel">
+        </div>
+        <div class="actions">
+          <button type="button" class="btn btn-primary" data-next>Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Authority -->
+    <section class="step" data-step="4" data-name="Your authority">
+      <button type="button" class="back" data-back>Back</button>
+      <div class="card">
+        <h2>What you are authorising</h2>
+        <p class="lead">Your letter of authority lets us speak to your supplier for you. In short:</p>
+        <div class="perm">
+          <h3>We can</h3>
+          <ul>
+            <li>Ask for your usage history, meter numbers, prices and contract end date.</li>
+            <li>Ask for copies of your bills and billing information.</li>
+            <li>Check industry databases for your metering details.</li>
+          </ul>
+        </div>
+        <div class="perm">
+          <h3>We cannot</h3>
+          <ul>
+            <li>Change your supply, switch supplier or agree any contract for you.</li>
+          </ul>
+        </div>
+        <p class="hint">The full wording is in the DocuSign you will receive. Read it before you sign.</p>
+        <div class="field" data-req="authorised">
+          <label class="check"><input type="checkbox" id="authorised"> <span>I am authorised to act for this business.</span></label>
+          <div class="err">Please confirm you are authorised.</div>
+        </div>
+        <div class="field" data-req="docusign">
+          <label class="check"><input type="checkbox" id="docusign"> <span>I understand a DocuSign letter of authority will be emailed to me from Better Connected.</span></label>
+          <div class="err">Please confirm so you know to expect it.</div>
+        </div>
+        <div class="field" data-req="terms">
+          <label class="check"><input type="checkbox" id="terms"> <span>I have read the <a href="https://betterconnected.biz/terms.html" target="_blank" rel="noopener">standard terms</a> and <a href="https://betterconnected.biz/privacy.html" target="_blank" rel="noopener">privacy notice</a>.</span></label>
+          <div class="err">Please confirm to continue.</div>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn btn-primary" data-next>Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Review -->
+    <section class="step" data-step="5" data-name="Check and send">
+      <button type="button" class="back" data-back>Back</button>
+      <div class="card">
+        <h2>Check and send</h2>
+        <p class="lead">One last look. You can go back and change anything.</p>
+        <table class="summary" id="summary"></table>
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Send and receive my DocuSign</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Done -->
+    <section class="step" data-step="6">
+      <div class="card">
+        <h2>Thank you. That is all from you.</h2>
+        <p class="lead">Here is what happens next.</p>
+        <ol class="timeline">
+          <li><strong>In the next few minutes</strong>Your letter of authority arrives by DocuSign from Better Connected. Sign it on your phone or computer.</li>
+          <li><strong>Within one working day</strong>Your named account manager emails to introduce themselves.</li>
+          <li><strong>Within one week</strong>We email what we found: a saving now, or the date we will come back with full pricing.</li>
+        </ol>
+        <div class="note">Other meters or sites? Reply to your account manager's email with those bills and we will cover every supply.</div>
+        <div class="actions">
+          <a class="btn btn-secondary" href="https://betterconnected.biz">Visit betterconnected.biz</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Remind me -->
+    <section class="step" data-step="remind" data-name="Remind me">
+      <button type="button" class="back" data-goto="0">Back</button>
+      <div class="card">
+        <h2>We will remind you</h2>
+        <p class="lead">Tell us when your next bill or renewal is due. We will send one email then, with a link straight back here.</p>
+        <div class="field" data-req="remEmail">
+          <label for="remEmail">Work email</label>
+          <input type="email" id="remEmail" name="remEmail" autocomplete="email">
+          <div class="err">Please enter a valid email address.</div>
+        </div>
+        <div class="field" data-req="remMonth">
+          <label for="remMonth">Remind me in</label>
+          <select id="remMonth" name="remMonth"></select>
+          <div class="err">Please choose a month.</div>
+        </div>
+        <div class="field">
+          <label class="check"><input type="checkbox" id="remCal"> <span>Also give me a calendar reminder to add to my diary.</span></label>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn btn-primary" id="remSend">Set my reminder</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" data-step="remindDone">
+      <div class="card">
+        <h2>Reminder set.</h2>
+        <p class="lead" id="remText">We will email you then. Nothing else happens until you come back.</p>
+        <div class="actions">
+          <a class="btn btn-secondary" id="icsLink" href="#" download="better-connected-reminder.ics" hidden>Add to my calendar</a>
+          <a class="btn btn-secondary" href="https://betterconnected.biz">Visit betterconnected.biz</a>
+        </div>
+      </div>
+    </section>
+
+  </form>
+</main>
+
+<footer>
+  &copy; Better Connections Limited. Company No. 07294707. ADR membership C35BETT02.
+  <a href="https://betterconnected.biz/privacy.html">Privacy</a> &middot; <a href="https://betterconnected.biz/terms.html">Terms</a>
+</footer>
+
+<script>
+/* CONFIG: set ENDPOINT to the Make.com webhook URL when the scenario is ready.
+   While ENDPOINT is empty the page runs in draft mode and sends nothing. */
+const ENDPOINT = "";
+const REMIND_ENDPOINT = "";
+
+const steps=[...document.querySelectorAll('.step')];
+const flowSteps=[1,2,3,4,5];
+let current="0";
+const $=id=>document.getElementById(id);
+
+function show(key){
+  current=String(key);
+  steps.forEach(s=>s.classList.toggle('active',s.dataset.step===current));
+  const n=Number(current);
+  const inFlow=flowSteps.includes(n);
+  $('progress').hidden=!inFlow;
+  if(inFlow){
+    const sec=steps.find(s=>s.dataset.step===current);
+    $('stepLabel').textContent=`Step ${n} of 5`;
+    $('stepName').textContent=sec.dataset.name;
+    $('barFill').style.width=(n/5*100)+'%';
+  }
+  if(current==="5") buildSummary();
+  window.scrollTo({top:0,behavior:'smooth'});
+  const first=steps.find(s=>s.dataset.step===current).querySelector('input,select');
+  if(first&&first.type!=='file'&&first.type!=='checkbox') setTimeout(()=>first.focus({preventScroll:true}),300);
+}
+
+const checks={
+  bill:()=>$('bill').files.length>0,
+  company:()=>$('company').value.trim().length>1,
+  postcode:()=>/^[A-Za-z]{1,2}\d[A-Za-z\d]?\s*\d[A-Za-z]{2}$/.test($('postcode').value.trim()),
+  name:()=>$('name').value.trim().length>2,
+  role:()=>$('role').value!=="",
+  email:()=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('email').value.trim()),
+  authorised:()=>$('authorised').checked,
+  docusign:()=>$('docusign').checked,
+  terms:()=>$('terms').checked,
+  remEmail:()=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('remEmail').value.trim()),
+  remMonth:()=>$('remMonth').value!==""
+};
+function valid(sec){
+  let ok=true;
+  sec.querySelectorAll('[data-req]').forEach(f=>{
+    const pass=checks[f.dataset.req]();
+    f.classList.toggle('invalid',!pass);
+    if(!pass) ok=false;
+  });
+  return ok;
+}
+
+document.addEventListener('click',e=>{
+  const t=e.target;
+  if(t.matches('[data-next]')){
+    const sec=t.closest('.step');
+    if(sec.dataset.step!=="0"&&!valid(sec)) return;
+    show(Number(current)+1);
+  }
+  if(t.matches('[data-back]')) show(Math.max(0,Number(current)-1));
+  if(t.matches('[data-goto]')) show(t.dataset.goto);
+});
+document.addEventListener('input',e=>{
+  const f=e.target.closest('[data-req]');
+  if(f&&f.classList.contains('invalid')&&checks[f.dataset.req]()) f.classList.remove('invalid');
+});
+document.addEventListener('change',e=>{
+  const f=e.target.closest('[data-req]');
+  if(f&&f.classList.contains('invalid')&&checks[f.dataset.req]()) f.classList.remove('invalid');
+});
+
+/* Bill upload */
+const drop=$('drop'),bill=$('bill');
+function fileChosen(){
+  const f=bill.files[0];
+  if(!f) return;
+  if(f.size>10*1024*1024){bill.value='';alert('That file is over 10MB. Please try a smaller file or a photo.');return;}
+  $('fileOk').textContent='✓ '+f.name+' added';
+  $('fileOk').style.display='block';
+  drop.closest('.field').classList.remove('invalid');
+}
+bill.addEventListener('change',fileChosen);
+['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('over')}));
+['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('over')}));
+drop.addEventListener('drop',e=>{if(e.dataTransfer.files.length){bill.files=e.dataTransfer.files;fileChosen();}});
+
+function buildSummary(){
+  const rows=[
+    ['Bill',bill.files[0]?bill.files[0].name:''],
+    ['Company',$('company').value],
+    ['Postcode',$('postcode').value.toUpperCase()],
+    ['Company number',$('companyNo').value||'We will look it up'],
+    ['Name',$('name').value],
+    ['Role',$('role').value],
+    ['Email',$('email').value],
+    ['Phone',$('phone').value||'Not given']
+  ];
+  $('summary').innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1].replace(/[<>&]/g,'')}</td></tr>`).join('');
+}
+
+/* Submit */
+$('flow').addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!ENDPOINT){show(6);return;}
+  const fd=new FormData();
+  fd.append('bill',bill.files[0]);
+  ['company','postcode','companyNo','name','role','email','phone'].forEach(k=>fd.append(k,$(k).value.trim()));
+  fd.append('authorised','yes');fd.append('docusign_ack','yes');fd.append('terms','yes');
+  fd.append('submitted_at',new Date().toISOString());
+  fd.append('source',new URLSearchParams(location.search).get('utm_campaign')||'direct');
+  const btn=e.submitter;btn.disabled=true;btn.textContent='Sending...';
+  try{
+    const r=await fetch(ENDPOINT,{method:'POST',body:fd});
+    if(!r.ok) throw new Error();
+    show(6);
+  }catch(err){
+    btn.disabled=false;btn.textContent='Send and receive my DocuSign';
+    alert('Sorry, that did not send. Please try again, or call 0845 217 7525.');
+  }
+});
+
+/* Remind me */
+(function(){
+  const sel=$('remMonth');sel.innerHTML='<option value="">Select a month</option>';
+  const d=new Date();
+  for(let i=1;i<=12;i++){
+    const m=new Date(d.getFullYear(),d.getMonth()+i,1);
+    const label=m.toLocaleDateString('en-GB',{month:'long',year:'numeric'});
+    sel.innerHTML+=`<option value="${m.getFullYear()}-${String(m.getMonth()+1).padStart(2,'0')}">${label}</option>`;
+  }
+})();
+$('remSend').addEventListener('click',async()=>{
+  const sec=$('remSend').closest('.step');
+  if(!valid(sec)) return;
+  const month=$('remMonth').value;
+  if(REMIND_ENDPOINT){
+    try{await fetch(REMIND_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:$('remEmail').value.trim(),month,requested_at:new Date().toISOString()})});}catch(e){}
+  }
+  const label=$('remMonth').selectedOptions[0].text;
+  $('remText').textContent=`We will email you at the start of ${label}. Nothing else happens until you come back.`;
+  if($('remCal').checked){
+    const dt=month.replace('-','')+'01';
+    const url=location.href.split('#')[0];
+    const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Better Connected//Quotes//EN','BEGIN:VEVENT',
+      'UID:'+Date.now()+'@betterconnected.biz','DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').split('.')[0]+'Z',
+      'DTSTART;VALUE=DATE:'+dt,'SUMMARY:Upload energy bill to Better Connected (5 minutes)',
+      'DESCRIPTION:Get fresh energy prices: '+url,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    const a=$('icsLink');a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);a.hidden=false;
+  }
+  show('remindDone');
+});
+
+if(ENDPOINT) $('draftBanner').remove();
+</script>
+</body>
+</html>
