@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Fresh energy quotes | Better Connected</title>
-<meta name="description" content="Upload your latest electricity bill, sign one letter of authority and let Better Connected do the rest.">
+<meta name="description" content="Upload your latest electricity bill and Better Connected does the rest. Nothing to sign.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
@@ -96,7 +96,7 @@ footer a{color:var(--text-mid)}
 
 <main>
   <div class="progress" id="progress" hidden>
-    <div class="progress-meta"><span id="stepLabel">Step 1 of 5</span><span id="stepName">Your bill</span></div>
+    <div class="progress-meta"><span id="stepLabel">Step 1 of 4</span><span id="stepName">Your bill</span></div>
     <div class="bar"><i id="barFill"></i></div>
   </div>
 
@@ -106,16 +106,16 @@ footer a{color:var(--text-mid)}
     <section class="step active" data-step="0">
       <div class="card">
         <h1>Fresh energy prices, without the sales call.</h1>
-        <p class="lead">Five minutes, your latest electricity bill, and one signature. We do the rest and report back by email.</p>
+        <p class="lead">Two minutes and your latest electricity bill. Nothing to sign. We do the rest and report back by email.</p>
         <ul class="ticks">
           <li>Upload your latest bill. We read the details for you.</li>
-          <li>Sign one letter of authority so we can check your supply.</li>
+          <li>No forms, no signature and no sales call.</li>
           <li>Your named account manager emails you what we find within a week.</li>
         </ul>
         <div class="note">Nothing changes on your account. We only look, compare and report. You decide what happens next.</div>
         <div class="actions">
           <button type="button" class="btn btn-primary" data-next>Start, I have my bill</button>
-          <button type="button" class="btn-link" data-goto="remind">No bill to hand? Remind me later</button>
+          <button type="button" class="btn-link" data-goto="remind" hidden>No bill to hand? Remind me later</button>
         </div>
       </div>
       <div class="trust"><span>16 years trading</span><span>Registered with the Energy Ombudsman</span><span>Listed with Cornwall Insight</span></div>
@@ -132,6 +132,7 @@ footer a{color:var(--text-mid)}
             <strong>Choose a file or drop it here</strong>
             <span>PDF, JPG or PNG, up to 10MB</span>
             <input type="file" id="bill" name="bill" accept=".pdf,.jpg,.jpeg,.png">
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0">
           </label>
           <div class="file-ok" id="fileOk"></div>
           <div class="err">Please add your latest bill to continue.</div>
@@ -173,7 +174,7 @@ footer a{color:var(--text-mid)}
       <button type="button" class="back" data-back>Back</button>
       <div class="card">
         <h2>About you</h2>
-        <p class="lead">The letter of authority will be sent to this email for you to sign.</p>
+        <p class="lead">We will send your quote to this email address.</p>
         <div class="field" data-req="name">
           <label for="name">Full name</label>
           <input type="text" id="name" name="name" autocomplete="name">
@@ -186,7 +187,7 @@ footer a{color:var(--text-mid)}
             <option>Director or owner</option>
             <option>Finance director or manager</option>
             <option>Office or facilities manager</option>
-            <option>Other authorised person</option>
+            <option>Other</option>
           </select>
           <div class="err">Please choose your role.</div>
         </div>
@@ -205,67 +206,32 @@ footer a{color:var(--text-mid)}
       </div>
     </section>
 
-    <!-- 4. Authority -->
-    <section class="step" data-step="4" data-name="Your authority">
-      <button type="button" class="back" data-back>Back</button>
-      <div class="card">
-        <h2>What you are authorising</h2>
-        <p class="lead">Your letter of authority lets us speak to your supplier for you. In short:</p>
-        <div class="perm">
-          <h3>We can</h3>
-          <ul>
-            <li>Ask for your usage history, meter numbers, prices and contract end date.</li>
-            <li>Ask for copies of your bills and billing information.</li>
-            <li>Check industry databases for your metering details.</li>
-          </ul>
-        </div>
-        <div class="perm">
-          <h3>We cannot</h3>
-          <ul>
-            <li>Change your supply, switch supplier or agree any contract for you.</li>
-          </ul>
-        </div>
-        <p class="hint">The full wording is in the DocuSign you will receive. Read it before you sign.</p>
-        <div class="field" data-req="authorised">
-          <label class="check"><input type="checkbox" id="authorised"> <span>I am authorised to act for this business.</span></label>
-          <div class="err">Please confirm you are authorised.</div>
-        </div>
-        <div class="field" data-req="docusign">
-          <label class="check"><input type="checkbox" id="docusign"> <span>I understand a DocuSign letter of authority will be emailed to me from Better Connected.</span></label>
-          <div class="err">Please confirm so you know to expect it.</div>
-        </div>
-        <div class="field" data-req="terms">
-          <label class="check"><input type="checkbox" id="terms"> <span>I have read the <a href="https://betterconnected.biz/terms.html" target="_blank" rel="noopener">standard terms</a> and <a href="https://betterconnected.biz/privacy.html" target="_blank" rel="noopener">privacy notice</a>.</span></label>
-          <div class="err">Please confirm to continue.</div>
-        </div>
-        <div class="actions">
-          <button type="button" class="btn btn-primary" data-next>Continue</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Review -->
-    <section class="step" data-step="5" data-name="Check and send">
+    <!-- 4. Review -->
+    <section class="step" data-step="4" data-name="Check and send">
       <button type="button" class="back" data-back>Back</button>
       <div class="card">
         <h2>Check and send</h2>
         <p class="lead">One last look. You can go back and change anything.</p>
         <table class="summary" id="summary"></table>
+        <div class="field" data-req="terms">
+          <label class="check"><input type="checkbox" id="terms"> <span>I am happy for Better Connected to use this bill to prepare my quote, and I have read the <a href="https://betterconnected.biz/terms.html" target="_blank" rel="noopener">standard terms</a> and <a href="https://betterconnected.biz/privacy.html" target="_blank" rel="noopener">privacy notice</a>.</span></label>
+          <div class="err">Please tick to continue.</div>
+        </div>
         <div class="actions">
-          <button type="submit" class="btn btn-primary">Send and receive my DocuSign</button>
+          <button type="submit" class="btn btn-primary">Send my bill</button>
         </div>
       </div>
     </section>
 
-    <!-- 6. Done -->
-    <section class="step" data-step="6">
+    <!-- 5. Done -->
+    <section class="step" data-step="5">
       <div class="card">
         <h2>Thank you. That is all from you.</h2>
         <p class="lead">Here is what happens next.</p>
         <ol class="timeline">
-          <li><strong>In the next few minutes</strong>Your letter of authority arrives by DocuSign from Better Connected. Sign it on your phone or computer.</li>
-          <li><strong>Within one working day</strong>Your named account manager emails to introduce themselves.</li>
-          <li><strong>Within one week</strong>We email what we found: a saving now, or the date we will come back with full pricing.</li>
+          <li><strong>Straight away</strong>We email you to confirm your bill has arrived safely.</li>
+          <li><strong>Within one week</strong>Your account manager emails your quote: what you pay now, beside today's best prices.</li>
+          <li><strong>Before your contract ends</strong>We come back with live prices in good time, so you can choose with no rush.</li>
         </ol>
         <div class="note">Other meters or sites? Reply to your account manager's email with those bills and we will cover every supply.</div>
         <div class="actions">
@@ -321,11 +287,11 @@ footer a{color:var(--text-mid)}
 <script>
 /* CONFIG: set ENDPOINT to the Make.com webhook URL when the scenario is ready.
    While ENDPOINT is empty the page runs in draft mode and sends nothing. */
-const ENDPOINT = "";
+const ENDPOINT = "https://hook.eu1.make.com/451xgy79o5aencedjxwmq8vobjvcdvcg";
 const REMIND_ENDPOINT = "";
 
 const steps=[...document.querySelectorAll('.step')];
-const flowSteps=[1,2,3,4,5];
+const flowSteps=[1,2,3,4];
 let current="0";
 const $=id=>document.getElementById(id);
 
@@ -337,11 +303,11 @@ function show(key){
   $('progress').hidden=!inFlow;
   if(inFlow){
     const sec=steps.find(s=>s.dataset.step===current);
-    $('stepLabel').textContent=`Step ${n} of 5`;
+    $('stepLabel').textContent=`Step ${n} of 4`;
     $('stepName').textContent=sec.dataset.name;
-    $('barFill').style.width=(n/5*100)+'%';
+    $('barFill').style.width=(n/4*100)+'%';
   }
-  if(current==="5") buildSummary();
+  if(current==="4") buildSummary();
   window.scrollTo({top:0,behavior:'smooth'});
   const first=steps.find(s=>s.dataset.step===current).querySelector('input,select');
   if(first&&first.type!=='file'&&first.type!=='checkbox') setTimeout(()=>first.focus({preventScroll:true}),300);
@@ -354,8 +320,6 @@ const checks={
   name:()=>$('name').value.trim().length>2,
   role:()=>$('role').value!=="",
   email:()=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('email').value.trim()),
-  authorised:()=>$('authorised').checked,
-  docusign:()=>$('docusign').checked,
   terms:()=>$('terms').checked,
   remEmail:()=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('remEmail').value.trim()),
   remMonth:()=>$('remMonth').value!==""
@@ -421,20 +385,22 @@ function buildSummary(){
 /* Submit */
 $('flow').addEventListener('submit',async e=>{
   e.preventDefault();
-  if(!ENDPOINT){show(6);return;}
+  if(!valid(e.target.querySelector('.step.active'))) return;
+  if(!ENDPOINT){show(5);return;}
   const fd=new FormData();
   fd.append('bill',bill.files[0]);
   ['company','postcode','companyNo','name','role','email','phone'].forEach(k=>fd.append(k,$(k).value.trim()));
-  fd.append('authorised','yes');fd.append('docusign_ack','yes');fd.append('terms','yes');
+  fd.append('terms','yes');
   fd.append('submitted_at',new Date().toISOString());
   fd.append('source',new URLSearchParams(location.search).get('utm_campaign')||'direct');
+  fd.append('website',$('website').value);
   const btn=e.submitter;btn.disabled=true;btn.textContent='Sending...';
   try{
     const r=await fetch(ENDPOINT,{method:'POST',body:fd});
     if(!r.ok) throw new Error();
-    show(6);
+    show(5);
   }catch(err){
-    btn.disabled=false;btn.textContent='Send and receive my DocuSign';
+    btn.disabled=false;btn.textContent='Send my bill';
     alert('Sorry, that did not send. Please try again, or call 0845 217 7525.');
   }
 });
