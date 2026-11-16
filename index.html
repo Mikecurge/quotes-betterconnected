@@ -150,18 +150,18 @@ footer a{color:var(--text-mid)}
         <h2>Your business</h2>
         <p class="lead">Just two things. We check the rest with Companies House.</p>
         <div class="field" data-req="company">
-          <label for="company">Registered company name</label>
+          <label for="company">Company name</label>
           <input type="text" id="company" name="company" autocomplete="organization">
           <div class="err">Please enter your company name.</div>
         </div>
-        <div class="field" data-req="postcode">
+        <div class="field" hidden>
           <label for="postcode">Business postcode</label>
           <input type="text" id="postcode" name="postcode" autocomplete="postal-code">
           <div class="err">Please enter a postcode.</div>
         </div>
         <div class="field">
-          <label for="companyNo">Company number <span class="hint">Optional. Helps us match you first time.</span></label>
-          <input type="text" id="companyNo" name="companyNo">
+          <label for="companyNo">Company number</label>
+          <div data-req="companyNo"><input type="text" id="companyNo" name="companyNo" autocomplete="off"><div class="err">Please enter your company number. We are unable to support businesses without one.</div></div>
         </div>
         <div class="actions">
           <button type="button" class="btn btn-primary" data-next>Continue</button>
@@ -315,7 +315,7 @@ function show(key){
 
 const checks={
   bill:()=>$('bill').files.length>0,
-  company:()=>$('company').value.trim().length>1,
+  company:()=>$('company').value.trim().length>1,companyNo:()=>{let v=$('companyNo').value.replace(/\s/g,'').toUpperCase();if(/^\d{1,8}$/.test(v))v=v.padStart(8,'0');else if(/^[A-Z]{2}\d{1,6}$/.test(v))v=v.slice(0,2)+v.slice(2).padStart(6,'0');else return false;$('companyNo').value=v;return true;},
   postcode:()=>/^[A-Za-z]{1,2}\d[A-Za-z\d]?\s*\d[A-Za-z]{2}$/.test($('postcode').value.trim()),
   name:()=>$('name').value.trim().length>2,
   role:()=>$('role').value!=="",
@@ -372,8 +372,8 @@ function buildSummary(){
   const rows=[
     ['Bill',bill.files[0]?bill.files[0].name:''],
     ['Company',$('company').value],
-    ['Postcode',$('postcode').value.toUpperCase()],
-    ['Company number',$('companyNo').value||'We will look it up'],
+    
+    ['Company number',$('companyNo').value],
     ['Name',$('name').value],
     ['Role',$('role').value],
     ['Email',$('email').value],
