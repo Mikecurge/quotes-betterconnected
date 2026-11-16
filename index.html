@@ -180,8 +180,8 @@ footer a{color:var(--text-mid)}
           <input type="text" id="name" name="name" autocomplete="name">
           <div class="err">Please enter your name.</div>
         </div>
-        <div class="field" data-req="role">
-          <label for="role">Your role</label>
+        <div class="field">
+          <label for="role">Your role <span class="hint">Optional.</span></label>
           <select id="role" name="role">
             <option value="">Select one</option>
             <option>Owner</option><option>Director</option>
@@ -375,7 +375,7 @@ function buildSummary(){
     
     ['Company number',$('companyNo').value],
     ['Name',$('name').value],
-    ['Role',$('role').value],
+    ['Role',$('role').value||'Not given'],
     ['Email',$('email').value],
     ['Phone',$('phone').value||'Not given']
   ];
